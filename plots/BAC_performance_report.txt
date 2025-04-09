@@ -1,0 +1,23 @@
+Performance Report for BAC
+==================================================
+
+MSE:
+  Linear Regression: 2.0220
+  Kernel Ridge: 0.9994
+  Improvement: -50.57%
+
+RMSE:
+  Linear Regression: 1.4220
+  Kernel Ridge: 0.9997
+  Improvement: -29.70%
+
+MAE:
+  Linear Regression: 1.0619
+  Kernel Ridge: 0.7849
+  Improvement: -26.09%
+
+R2:
+  Linear Regression: 0.9521
+  Kernel Ridge: 0.9763
+  Improvement: 2.54%
+

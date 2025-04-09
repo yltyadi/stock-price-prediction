@@ -1,0 +1,23 @@
+Performance Report for WMT
+==================================================
+
+MSE:
+  Linear Regression: 2.1902
+  Kernel Ridge: 1.6693
+  Improvement: -23.78%
+
+RMSE:
+  Linear Regression: 1.4799
+  Kernel Ridge: 1.2920
+  Improvement: -12.70%
+
+MAE:
+  Linear Regression: 1.0861
+  Kernel Ridge: 0.9913
+  Improvement: -8.73%
+
+R2:
+  Linear Regression: 0.9887
+  Kernel Ridge: 0.9914
+  Improvement: 0.27%
+

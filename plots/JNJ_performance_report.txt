@@ -1,0 +1,23 @@
+Performance Report for JNJ
+==================================================
+
+MSE:
+  Linear Regression: 10.7836
+  Kernel Ridge: 6.7401
+  Improvement: -37.50%
+
+RMSE:
+  Linear Regression: 3.2838
+  Kernel Ridge: 2.5962
+  Improvement: -20.94%
+
+MAE:
+  Linear Regression: 2.6305
+  Kernel Ridge: 2.0055
+  Improvement: -23.76%
+
+R2:
+  Linear Regression: 0.8814
+  Kernel Ridge: 0.9259
+  Improvement: 5.05%
+

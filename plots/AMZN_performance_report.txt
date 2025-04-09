@@ -1,0 +1,23 @@
+Performance Report for AMZN
+==================================================
+
+MSE:
+  Linear Regression: 53.3464
+  Kernel Ridge: 23.2958
+  Improvement: -56.33%
+
+RMSE:
+  Linear Regression: 7.3039
+  Kernel Ridge: 4.8266
+  Improvement: -33.92%
+
+MAE:
+  Linear Regression: 5.6460
+  Kernel Ridge: 3.7498
+  Improvement: -33.59%
+
+R2:
+  Linear Regression: 0.9469
+  Kernel Ridge: 0.9768
+  Improvement: 3.16%
+
