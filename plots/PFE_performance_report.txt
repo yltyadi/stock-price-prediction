@@ -2,22 +2,22 @@ Performance Report for PFE
 ==================================================
 
 MSE:
-  Linear Regression: 1.8584
-  Kernel Ridge: 0.9604
-  Improvement: -48.32%
+  Linear Regression: 0.7525
+  Kernel Ridge: 0.7579
+  Improvement: 0.71%
 
 RMSE:
-  Linear Regression: 1.3632
-  Kernel Ridge: 0.9800
-  Improvement: -28.11%
+  Linear Regression: 0.8675
+  Kernel Ridge: 0.8706
+  Improvement: 0.35%
 
 MAE:
-  Linear Regression: 1.0207
-  Kernel Ridge: 0.7193
-  Improvement: -29.53%
+  Linear Regression: 0.6882
+  Kernel Ridge: 0.6889
+  Improvement: 0.10%
 
 R2:
-  Linear Regression: 0.9660
-  Kernel Ridge: 0.9824
-  Improvement: 1.70%
+  Linear Regression: 0.5954
+  Kernel Ridge: 0.5925
+  Improvement: -0.48%
 

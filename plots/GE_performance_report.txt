@@ -2,22 +2,22 @@ Performance Report for GE
 ==================================================
 
 MSE:
-  Linear Regression: 14.7358
-  Kernel Ridge: 9.5096
-  Improvement: -35.47%
+  Linear Regression: 86.3121
+  Kernel Ridge: 68.3336
+  Improvement: -20.83%
 
 RMSE:
-  Linear Regression: 3.8387
-  Kernel Ridge: 3.0838
-  Improvement: -19.67%
+  Linear Regression: 9.2904
+  Kernel Ridge: 8.2664
+  Improvement: -11.02%
 
 MAE:
-  Linear Regression: 2.7774
-  Kernel Ridge: 2.3436
-  Improvement: -15.62%
+  Linear Regression: 6.8642
+  Kernel Ridge: 6.1998
+  Improvement: -9.68%
 
 R2:
-  Linear Regression: 0.9936
-  Kernel Ridge: 0.9959
-  Improvement: 0.23%
+  Linear Regression: 0.6456
+  Kernel Ridge: 0.7194
+  Improvement: 11.43%
 

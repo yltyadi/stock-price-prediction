@@ -5,6 +5,7 @@ import numpy as np
 from datetime import datetime
 import os
 from matplotlib.dates import YearLocator, DateFormatter
+from sklearn.metrics import mean_squared_error, r2_score
 
 
 class ModelVisualizer:
@@ -22,18 +23,57 @@ class ModelVisualizer:
         self, y_true, y_pred_linear, y_pred_kernel, dates, symbol, save=True
     ):
         """Plot actual vs predicted prices for both models"""
-        plt.figure(figsize=(15, 8))
-        plt.plot(dates, y_true, label="Actual", linewidth=2)
-        plt.plot(
-            dates, y_pred_linear, label="Linear Regression", linewidth=2, linestyle="--"
-        )
-        plt.plot(dates, y_pred_kernel, label="Kernel Ridge", linewidth=2, linestyle=":")
+        plt.figure(figsize=(18, 9))
 
-        plt.title(f"Stock Price Predictions for {symbol}")
-        plt.xlabel("Date")
-        plt.ylabel("Price")
-        plt.legend()
-        plt.grid(True)
+        # Calculate dynamic y-axis limits
+        min_val = min(y_true.min(), y_pred_linear.min(), y_pred_kernel.min())
+        max_val = max(y_true.max(), y_pred_linear.max(), y_pred_kernel.max())
+        margin = (max_val - min_val) * 0.1
+
+        # Calculate metrics
+        rmse_lin = np.sqrt(mean_squared_error(y_true, y_pred_linear))
+        rmse_krn = np.sqrt(mean_squared_error(y_true, y_pred_kernel))
+        r2_lin = r2_score(y_true, y_pred_linear)
+        r2_krn = r2_score(y_true, y_pred_kernel)
+
+        plt.plot(dates, y_true, label="Actual", linewidth=2.5, color="#1f77b4")
+        plt.plot(
+            dates,
+            y_pred_linear,
+            label=f"Linear (RMSE: {rmse_lin:.2f}, R²: {r2_lin:.2f})",
+            linewidth=2,
+            linestyle="--",
+            color="#ff7f0e",
+        )
+        plt.plot(
+            dates,
+            y_pred_kernel,
+            label=f"Kernel (RMSE: {rmse_krn:.2f}, R²: {r2_krn:.2f})",
+            linewidth=2,
+            linestyle="dashdot",
+            marker="o",
+            markersize=4,
+            color="#2ca02c",
+        )
+
+        plt.title(
+            f"{symbol} Price Predictions\n{dates.iloc[0].date()} to {dates.iloc[-1].date()}"
+        )
+        plt.xlabel("Date", fontsize=12)
+        plt.ylabel("Price (USD)", fontsize=12)
+        plt.legend(fontsize=10, loc="upper left")
+        plt.grid(True, alpha=0.3)
+        plt.ylim(min_val - margin, max_val + margin)
+
+        # Add volatility indicator
+        volatility = y_true.rolling(20).std().iloc[-1]
+        plt.annotate(
+            f"20D Vol: {volatility:.2f}",
+            xy=(0.05, 0.95),
+            xycoords="axes fraction",
+            fontsize=10,
+            color="#d62728",
+        )
 
         # Format x-axis with dates
         ax = plt.gca()

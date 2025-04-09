@@ -23,7 +23,14 @@ class StockPricePredictor:
     def prepare_data(self, X, y, test_size=0.2):
         """Prepare and split data for training"""
         X_scaled = self.scaler.fit_transform(X)
-        return train_test_split(X_scaled, y, test_size=test_size, random_state=42)
+        # Time-based split for last 20% of data
+        split_idx = int(len(X_scaled) * (1 - test_size))
+        return (
+            X_scaled[:split_idx],
+            X_scaled[split_idx:],
+            y[:split_idx],
+            y[split_idx:],
+        )
 
     def train_linear_regression(self, X_train, y_train):
         """Train baseline Linear Regression model"""
@@ -36,13 +43,13 @@ class StockPricePredictor:
 
         def objective(trial):
             kernel = trial.suggest_categorical("kernel", ["linear", "rbf", "poly"])
-            alpha = trial.suggest_loguniform("alpha", 1e-4, 1.0)
+            alpha = trial.suggest_loguniform("alpha", 1e-6, 100.0)
             gamma = (
-                trial.suggest_loguniform("gamma", 1e-4, 1.0)
+                trial.suggest_loguniform("gamma", 1e-6, 10.0)
                 if kernel in ["rbf", "poly"]
                 else None
             )
-            degree = trial.suggest_int("degree", 2, 5) if kernel == "poly" else None
+            degree = trial.suggest_int("degree", 2, 6) if kernel == "poly" else None
 
             params = {"alpha": alpha}
             if gamma is not None:
