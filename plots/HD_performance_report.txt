@@ -2,22 +2,22 @@ Performance Report for HD
 ==================================================
 
 MSE:
-  Linear Regression: 202.8023
-  Kernel Ridge: 175.0607
-  Improvement: -13.68%
+  Linear Regression: 206.5303
+  Kernel Ridge: 182.9160
+  Improvement: -11.43%
 
 RMSE:
-  Linear Regression: 14.2409
-  Kernel Ridge: 13.2311
-  Improvement: -7.09%
+  Linear Regression: 14.3712
+  Kernel Ridge: 13.5246
+  Improvement: -5.89%
 
 MAE:
-  Linear Regression: 11.3297
-  Kernel Ridge: 10.7397
-  Improvement: -5.21%
+  Linear Regression: 11.4994
+  Kernel Ridge: 11.0611
+  Improvement: -3.81%
 
 R2:
-  Linear Regression: 0.7901
-  Kernel Ridge: 0.8189
-  Improvement: 3.63%
+  Linear Regression: 0.7778
+  Kernel Ridge: 0.8032
+  Improvement: 3.27%
 

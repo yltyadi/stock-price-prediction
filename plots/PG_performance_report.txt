@@ -2,22 +2,22 @@ Performance Report for PG
 ==================================================
 
 MSE:
-  Linear Regression: 16.2439
-  Kernel Ridge: 15.8694
-  Improvement: -2.31%
+  Linear Regression: 16.4991
+  Kernel Ridge: 16.2473
+  Improvement: -1.53%
 
 RMSE:
-  Linear Regression: 4.0304
-  Kernel Ridge: 3.9836
-  Improvement: -1.16%
+  Linear Regression: 4.0619
+  Kernel Ridge: 4.0308
+  Improvement: -0.77%
 
 MAE:
-  Linear Regression: 3.2056
-  Kernel Ridge: 3.1784
-  Improvement: -0.85%
+  Linear Regression: 3.2090
+  Kernel Ridge: 3.2182
+  Improvement: 0.29%
 
 R2:
-  Linear Regression: 0.1904
-  Kernel Ridge: 0.2091
-  Improvement: 9.80%
+  Linear Regression: 0.1281
+  Kernel Ridge: 0.1414
+  Improvement: 10.39%
 

@@ -6,8 +6,8 @@ from sklearn.kernel_ridge import KernelRidge
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 import optuna
+
 import os
-import joblib
 
 
 class StockPricePredictor:
@@ -16,7 +16,7 @@ class StockPricePredictor:
         self.kernel_model = None
         self.scaler = StandardScaler()
         self.models_dir = os.path.join(
-            os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "models"
+            os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "results"
         )
         os.makedirs(self.models_dir, exist_ok=True)
 
@@ -87,32 +87,3 @@ class StockPricePredictor:
             "R2": r2_score(y_test, y_pred),
         }
         return metrics, y_pred
-
-    def save_models(self, symbol):
-        """Save trained models and scaler"""
-        if self.linear_model is not None:
-            joblib.dump(
-                self.linear_model,
-                os.path.join(self.models_dir, f"{symbol}_linear_model.joblib"),
-            )
-        if self.kernel_model is not None:
-            joblib.dump(
-                self.kernel_model,
-                os.path.join(self.models_dir, f"{symbol}_kernel_model.joblib"),
-            )
-        joblib.dump(
-            self.scaler, os.path.join(self.models_dir, f"{symbol}_scaler.joblib")
-        )
-
-    def load_models(self, symbol):
-        """Load trained models and scaler"""
-        self.linear_model = joblib.load(
-            os.path.join(self.models_dir, f"{symbol}_linear_model.joblib")
-        )
-        self.kernel_model = joblib.load(
-            os.path.join(self.models_dir, f"{symbol}_kernel_model.joblib")
-        )
-        self.scaler = joblib.load(
-            os.path.join(self.models_dir, f"{symbol}_scaler.joblib")
-        )
-        return self.linear_model, self.kernel_model, self.scaler

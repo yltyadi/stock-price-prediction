@@ -2,22 +2,22 @@ Performance Report for CVX
 ==================================================
 
 MSE:
-  Linear Regression: 33.1465
-  Kernel Ridge: 28.8244
-  Improvement: -13.04%
+  Linear Regression: 36.2173
+  Kernel Ridge: 30.6167
+  Improvement: -15.46%
 
 RMSE:
-  Linear Regression: 5.7573
-  Kernel Ridge: 5.3688
-  Improvement: -6.75%
+  Linear Regression: 6.0181
+  Kernel Ridge: 5.5332
+  Improvement: -8.06%
 
 MAE:
-  Linear Regression: 4.2274
-  Kernel Ridge: 3.8750
-  Improvement: -8.33%
+  Linear Regression: 4.3219
+  Kernel Ridge: 3.8716
+  Improvement: -10.42%
 
 R2:
-  Linear Regression: 0.3239
+  Linear Regression: 0.3045
   Kernel Ridge: 0.4121
-  Improvement: 27.22%
+  Improvement: 35.32%
 

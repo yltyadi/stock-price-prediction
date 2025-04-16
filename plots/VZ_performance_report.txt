@@ -2,22 +2,22 @@ Performance Report for VZ
 ==================================================
 
 MSE:
-  Linear Regression: 1.2956
-  Kernel Ridge: 1.3103
-  Improvement: 1.14%
+  Linear Regression: 1.3106
+  Kernel Ridge: 1.3320
+  Improvement: 1.63%
 
 RMSE:
-  Linear Regression: 1.1382
-  Kernel Ridge: 1.1447
-  Improvement: 0.57%
+  Linear Regression: 1.1448
+  Kernel Ridge: 1.1541
+  Improvement: 0.81%
 
 MAE:
-  Linear Regression: 0.8911
-  Kernel Ridge: 0.9059
-  Improvement: 1.67%
+  Linear Regression: 0.9016
+  Kernel Ridge: 0.9085
+  Improvement: 0.77%
 
 R2:
-  Linear Regression: 0.7135
-  Kernel Ridge: 0.7103
-  Improvement: -0.46%
+  Linear Regression: 0.7074
+  Kernel Ridge: 0.7027
+  Improvement: -0.67%
 

@@ -2,22 +2,22 @@ Performance Report for MCD
 ==================================================
 
 MSE:
-  Linear Regression: 61.7367
-  Kernel Ridge: 59.8854
-  Improvement: -3.00%
+  Linear Regression: 63.7887
+  Kernel Ridge: 61.6037
+  Improvement: -3.43%
 
 RMSE:
-  Linear Regression: 7.8573
-  Kernel Ridge: 7.7386
-  Improvement: -1.51%
+  Linear Regression: 7.9868
+  Kernel Ridge: 7.8488
+  Improvement: -1.73%
 
 MAE:
-  Linear Regression: 6.2679
-  Kernel Ridge: 6.2430
-  Improvement: -0.40%
+  Linear Regression: 6.4007
+  Kernel Ridge: 6.2512
+  Improvement: -2.34%
 
 R2:
-  Linear Regression: 0.8505
-  Kernel Ridge: 0.8550
-  Improvement: 0.53%
+  Linear Regression: 0.8495
+  Kernel Ridge: 0.8546
+  Improvement: 0.61%
 

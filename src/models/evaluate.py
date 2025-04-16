@@ -51,9 +51,6 @@ def evaluate_stock(symbol):
         kernel_model, X_test, y_test
     )
 
-    # Save models
-    predictor.save_models(symbol)
-
     # Prepare metrics for visualization
     metrics_dict = {
         "MSE": {"Linear": linear_metrics["MSE"], "Kernel": kernel_metrics["MSE"]},
@@ -124,7 +121,7 @@ def main():
         }
         results_df = pd.concat([results_df, pd.DataFrame([row])], ignore_index=True)
 
-    results_path = os.path.join("models", "overall_results.csv")
+    results_path = os.path.join("results", "overall_results.csv")
     results_df.to_csv(results_path, index=False)
     print(f"\nOverall results saved to {results_path}")
 
