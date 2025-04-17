@@ -2,22 +2,22 @@ Performance Report for XOM
 ==================================================
 
 MSE:
-  Linear Regression: 14.2024
-  Kernel Ridge: 13.1390
-  Improvement: -7.49%
+  Linear Regression: 14.2649
+  Kernel Ridge: 13.1675
+  Error Reduction: 7.69%
 
 RMSE:
-  Linear Regression: 3.7686
-  Kernel Ridge: 3.6248
-  Improvement: -3.82%
+  Linear Regression: 3.7769
+  Kernel Ridge: 3.6287
+  Error Reduction: 3.92%
 
 MAE:
-  Linear Regression: 2.8402
-  Kernel Ridge: 2.7178
-  Improvement: -4.31%
+  Linear Regression: 2.8507
+  Kernel Ridge: 2.7248
+  Error Reduction: 4.42%
 
 R2:
-  Linear Regression: 0.2948
-  Kernel Ridge: 0.3476
-  Improvement: 17.91%
+  Linear Regression: 0.3008
+  Kernel Ridge: 0.3546
+  Accuracy Improvement: 17.88%
 

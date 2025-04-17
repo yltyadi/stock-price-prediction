@@ -3,12 +3,13 @@ import pandas as pd
 from datetime import datetime
 import sys
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+from collect_data import StockDataCollector
+from feature_engineering import FeatureEngineer, FUTURE_PERIOD
+from train_models import StockPricePredictor
+from visualize import ModelVisualizer
 
-from src.data.collect_data import StockDataCollector
-from src.features.feature_engineering import FeatureEngineer
-from src.models.train_models import StockPricePredictor
-from src.visualization.visualize import ModelVisualizer
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(PROJECT_ROOT)
 
 
 def evaluate_stock(symbol):
@@ -18,7 +19,7 @@ def evaluate_stock(symbol):
     visualizer = ModelVisualizer()
 
     # Load data
-    data_path = os.path.join("data", f"{symbol}_data.csv")
+    data_path = os.path.join(PROJECT_ROOT, "data", f"{symbol}_data.csv")
     if not os.path.exists(data_path):
         print(f"Data not found for {symbol}. Downloading...")
         collector = StockDataCollector([symbol])
@@ -30,7 +31,7 @@ def evaluate_stock(symbol):
 
     # Feature engineering
     X, y = feature_engineer.prepare_features(df)
-    dates = df["Date"].iloc[:-5]  # Adjust dates for the forecast period
+    dates = df["Date"].iloc[:-FUTURE_PERIOD]  # Adjust dates for the forecast period
 
     # Prepare data for training
     X_train, X_test, y_train, y_test = predictor.prepare_data(X, y)
@@ -76,28 +77,37 @@ def evaluate_stock(symbol):
 
 
 def main():
+    # folder setup
+    os.makedirs(os.path.join(PROJECT_ROOT, "data"), exist_ok=True)
+    os.makedirs(os.path.join(PROJECT_ROOT, "results"), exist_ok=True)
+    os.makedirs(os.path.join(PROJECT_ROOT, "plots"), exist_ok=True)
+
+    # List of companies from different sectors
     symbols = [
-        "AAPL",
-        "MSFT",
-        "JPM",
-        "BAC",
-        "JNJ",
-        "PFE",
-        "XOM",
-        "CVX",
-        "PG",
-        "KO",
-        "WMT",
-        "AMZN",
-        "BA",
-        "GE",
-        "VZ",
-        "T",
-        "HD",
-        "LOW",
-        "MCD",
-        "SBUX",
+        "AAPL",  # Technology
+        "MSFT",  # Technology
+        "JPM",  # Finance
+        "BAC",  # Finance
+        "JNJ",  # Healthcare
+        "PFE",  # Healthcare
+        "XOM",  # Energy
+        "CVX",  # Energy
+        "PG",  # Consumer Goods
+        "KO",  # Consumer Goods
+        "WMT",  # Retail
+        "AMZN",  # Retail
+        "BA",  # Industrial
+        "GE",  # Industrial
+        "VZ",  # Telecommunications
+        "T",  # Telecommunications
+        "HD",  # Home Improvement
+        "LOW",  # Home Improvement
+        "MCD",  # Restaurants
+        "SBUX",  # Restaurants
     ]
+    # collecting stock data
+    collector = StockDataCollector(symbols)
+    collector.download_data()
 
     results = {}
     for symbol in symbols:
@@ -121,7 +131,7 @@ def main():
         }
         results_df = pd.concat([results_df, pd.DataFrame([row])], ignore_index=True)
 
-    results_path = os.path.join("results", "overall_results.csv")
+    results_path = os.path.join(PROJECT_ROOT, "results", "overall_results.csv")
     results_df.to_csv(results_path, index=False)
     print(f"\nOverall results saved to {results_path}")
 

@@ -2,22 +2,22 @@ Performance Report for KO
 ==================================================
 
 MSE:
-  Linear Regression: 2.7530
-  Kernel Ridge: 2.6999
-  Improvement: -1.93%
+  Linear Regression: 2.7701
+  Kernel Ridge: 2.7154
+  Error Reduction: 1.97%
 
 RMSE:
-  Linear Regression: 1.6592
-  Kernel Ridge: 1.6431
-  Improvement: -0.97%
+  Linear Regression: 1.6643
+  Kernel Ridge: 1.6478
+  Error Reduction: 0.99%
 
 MAE:
-  Linear Regression: 1.2998
-  Kernel Ridge: 1.2595
-  Improvement: -3.10%
+  Linear Regression: 1.3041
+  Kernel Ridge: 1.2651
+  Error Reduction: 2.99%
 
 R2:
-  Linear Regression: 0.8127
-  Kernel Ridge: 0.8164
-  Improvement: 0.44%
+  Linear Regression: 0.8121
+  Kernel Ridge: 0.8158
+  Accuracy Improvement: 0.46%
 

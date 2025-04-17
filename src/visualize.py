@@ -7,12 +7,12 @@ import os
 from matplotlib.dates import YearLocator, DateFormatter
 from sklearn.metrics import mean_squared_error, r2_score
 
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 class ModelVisualizer:
     def __init__(self):
-        self.plots_dir = os.path.join(
-            os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "plots"
-        )
+        self.plots_dir = os.path.join(PROJECT_ROOT, "plots")
         os.makedirs(self.plots_dir, exist_ok=True)
 
         # Set style for all plots
@@ -147,15 +147,27 @@ class ModelVisualizer:
         report = f"Performance Report for {symbol}\n"
         report += "=" * 50 + "\n\n"
 
-        for metric, values in metrics_dict.items():
-            report += f"{metric}:\n"
-            report += f"  Linear Regression: {values['Linear']:.4f}\n"
-            report += f"  Kernel Ridge: {values['Kernel']:.4f}\n"
-            improvement = (
-                (values["Kernel"] - values["Linear"]) / values["Linear"]
-            ) * 100
-            report += f"  Improvement: {improvement:.2f}%\n\n"
+        for metric in ["MSE", "RMSE", "MAE"]:
+            linear_val = metrics_dict[metric]["Linear"]
+            kernel_val = metrics_dict[metric]["Kernel"]
+            error_reduction = abs((kernel_val - linear_val) / linear_val * 100)
 
+            report += f"{metric}:\n"
+            report += f"  Linear Regression: {linear_val:.4f}\n"
+            report += f"  Kernel Ridge: {kernel_val:.4f}\n"
+            report += f"  Error Reduction: {error_reduction:.2f}%\n\n"
+
+        # R² is handled differently as higher is better
+        linear_r2 = metrics_dict["R2"]["Linear"]
+        kernel_r2 = metrics_dict["R2"]["Kernel"]
+        r2_improvement = (kernel_r2 - linear_r2) / linear_r2 * 100
+
+        report += f"R2:\n"
+        report += f"  Linear Regression: {linear_r2:.4f}\n"
+        report += f"  Kernel Ridge: {kernel_r2:.4f}\n"
+        report += f"  Accuracy Improvement: {r2_improvement:.2f}%\n\n"
+
+        # Save the report to a file in the plots directory
         report_path = os.path.join(self.plots_dir, f"{symbol}_performance_report.txt")
         with open(report_path, "w") as f:
             f.write(report)

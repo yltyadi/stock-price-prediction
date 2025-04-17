@@ -2,22 +2,22 @@ Performance Report for LOW
 ==================================================
 
 MSE:
-  Linear Regression: 70.2535
-  Kernel Ridge: 69.3623
-  Improvement: -1.27%
+  Linear Regression: 70.5364
+  Kernel Ridge: 68.0267
+  Error Reduction: 3.56%
 
 RMSE:
-  Linear Regression: 8.3817
-  Kernel Ridge: 8.3284
-  Improvement: -0.64%
+  Linear Regression: 8.3986
+  Kernel Ridge: 8.2478
+  Error Reduction: 1.80%
 
 MAE:
-  Linear Regression: 6.7906
-  Kernel Ridge: 6.7324
-  Improvement: -0.86%
+  Linear Regression: 6.8153
+  Kernel Ridge: 6.6865
+  Error Reduction: 1.89%
 
 R2:
-  Linear Regression: 0.8018
-  Kernel Ridge: 0.8043
-  Improvement: 0.31%
+  Linear Regression: 0.8022
+  Kernel Ridge: 0.8092
+  Accuracy Improvement: 0.88%
 

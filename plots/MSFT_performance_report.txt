@@ -2,22 +2,22 @@ Performance Report for MSFT
 ==================================================
 
 MSE:
-  Linear Regression: 174.5289
-  Kernel Ridge: 167.5628
-  Improvement: -3.99%
+  Linear Regression: 173.8427
+  Kernel Ridge: 167.0498
+  Error Reduction: 3.91%
 
 RMSE:
-  Linear Regression: 13.2109
-  Kernel Ridge: 12.9446
-  Improvement: -2.02%
+  Linear Regression: 13.1849
+  Kernel Ridge: 12.9248
+  Error Reduction: 1.97%
 
 MAE:
-  Linear Regression: 10.9190
-  Kernel Ridge: 10.8068
-  Improvement: -1.03%
+  Linear Regression: 10.9029
+  Kernel Ridge: 10.8001
+  Error Reduction: 0.94%
 
 R2:
-  Linear Regression: 0.5649
-  Kernel Ridge: 0.5823
-  Improvement: 3.07%
+  Linear Regression: 0.5718
+  Kernel Ridge: 0.5885
+  Accuracy Improvement: 2.93%
 

@@ -2,22 +2,22 @@ Performance Report for JPM
 ==================================================
 
 MSE:
-  Linear Regression: 87.1935
-  Kernel Ridge: 82.0152
-  Improvement: -5.94%
+  Linear Regression: 87.0905
+  Kernel Ridge: 81.9736
+  Error Reduction: 5.88%
 
 RMSE:
-  Linear Regression: 9.3377
-  Kernel Ridge: 9.0562
-  Improvement: -3.01%
+  Linear Regression: 9.3322
+  Kernel Ridge: 9.0539
+  Error Reduction: 2.98%
 
 MAE:
-  Linear Regression: 7.2740
-  Kernel Ridge: 6.9436
-  Improvement: -4.54%
+  Linear Regression: 7.2656
+  Kernel Ridge: 7.0014
+  Error Reduction: 3.64%
 
 R2:
-  Linear Regression: 0.8502
-  Kernel Ridge: 0.8591
-  Improvement: 1.05%
+  Linear Regression: 0.8490
+  Kernel Ridge: 0.8579
+  Accuracy Improvement: 1.05%
 

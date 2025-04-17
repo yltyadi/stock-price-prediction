@@ -2,22 +2,22 @@ Performance Report for BA
 ==================================================
 
 MSE:
-  Linear Regression: 94.4638
-  Kernel Ridge: 81.4813
-  Improvement: -13.74%
+  Linear Regression: 95.4915
+  Kernel Ridge: 96.1634
+  Error Reduction: 0.70%
 
 RMSE:
-  Linear Regression: 9.7192
-  Kernel Ridge: 9.0267
-  Improvement: -7.13%
+  Linear Regression: 9.7720
+  Kernel Ridge: 9.8063
+  Error Reduction: 0.35%
 
 MAE:
-  Linear Regression: 7.4591
-  Kernel Ridge: 6.9752
-  Improvement: -6.49%
+  Linear Regression: 7.5206
+  Kernel Ridge: 7.4966
+  Error Reduction: 0.32%
 
 R2:
-  Linear Regression: 0.4473
-  Kernel Ridge: 0.5233
-  Improvement: 16.98%
+  Linear Regression: 0.4433
+  Kernel Ridge: 0.4394
+  Accuracy Improvement: -0.88%
 

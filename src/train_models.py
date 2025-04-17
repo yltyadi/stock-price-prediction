@@ -6,8 +6,9 @@ from sklearn.kernel_ridge import KernelRidge
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 import optuna
-
 import os
+
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 class StockPricePredictor:
@@ -15,13 +16,12 @@ class StockPricePredictor:
         self.linear_model = None
         self.kernel_model = None
         self.scaler = StandardScaler()
-        self.models_dir = os.path.join(
-            os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "results"
-        )
-        os.makedirs(self.models_dir, exist_ok=True)
 
     def prepare_data(self, X, y, test_size=0.2):
-        """Prepare and split data for training"""
+        """
+        Prepare and split data for training:
+        We use the first 80% of the data for training and the last 20% for testing
+        """
         X_scaled = self.scaler.fit_transform(X)
         # Time-based split for last 20% of data
         split_idx = int(len(X_scaled) * (1 - test_size))
@@ -33,7 +33,7 @@ class StockPricePredictor:
         )
 
     def train_linear_regression(self, X_train, y_train):
-        """Train baseline Linear Regression model"""
+        """Train simple baseline Linear Regression model"""
         self.linear_model = LinearRegression()
         self.linear_model.fit(X_train, y_train)
         return self.linear_model

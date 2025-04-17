@@ -14,3 +14,21 @@ env.bak/
 
 # IDE
 .vscode/
+.idea/
+
+# Generated data and models
+data/
+results/
+plots/
+models/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log

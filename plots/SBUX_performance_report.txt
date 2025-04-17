@@ -2,22 +2,22 @@ Performance Report for SBUX
 ==================================================
 
 MSE:
-  Linear Regression: 34.9236
-  Kernel Ridge: 33.3909
-  Improvement: -4.39%
+  Linear Regression: 35.4395
+  Kernel Ridge: 33.5901
+  Error Reduction: 5.22%
 
 RMSE:
-  Linear Regression: 5.9096
-  Kernel Ridge: 5.7785
-  Improvement: -2.22%
+  Linear Regression: 5.9531
+  Kernel Ridge: 5.7957
+  Error Reduction: 2.64%
 
 MAE:
-  Linear Regression: 4.1600
-  Kernel Ridge: 3.9717
-  Improvement: -4.53%
+  Linear Regression: 4.2079
+  Kernel Ridge: 4.0004
+  Error Reduction: 4.93%
 
 R2:
-  Linear Regression: 0.7489
-  Kernel Ridge: 0.7599
-  Improvement: 1.47%
+  Linear Regression: 0.7458
+  Kernel Ridge: 0.7591
+  Accuracy Improvement: 1.78%
 

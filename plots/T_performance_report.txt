@@ -2,22 +2,22 @@ Performance Report for T
 ==================================================
 
 MSE:
-  Linear Regression: 1.2191
-  Kernel Ridge: 1.0892
-  Improvement: -10.65%
+  Linear Regression: 1.2350
+  Kernel Ridge: 1.1483
+  Error Reduction: 7.02%
 
 RMSE:
-  Linear Regression: 1.1041
-  Kernel Ridge: 1.0437
-  Improvement: -5.48%
+  Linear Regression: 1.1113
+  Kernel Ridge: 1.0716
+  Error Reduction: 3.57%
 
 MAE:
-  Linear Regression: 0.8907
-  Kernel Ridge: 0.8368
-  Improvement: -6.05%
+  Linear Regression: 0.8977
+  Kernel Ridge: 0.8588
+  Error Reduction: 4.33%
 
 R2:
-  Linear Regression: 0.8894
-  Kernel Ridge: 0.9012
-  Improvement: 1.32%
+  Linear Regression: 0.8882
+  Kernel Ridge: 0.8960
+  Accuracy Improvement: 0.88%
 

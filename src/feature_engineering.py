@@ -1,13 +1,17 @@
 import pandas as pd
 import numpy as np
 
+FUTURE_PERIOD = 5  # 5 days into the future for prediction
+
 
 class FeatureEngineer:
+    """A class used to transform raw data into features suitable for our ML model"""
+
     def __init__(self):
         pass
 
     def calculate_technical_indicators(self, df):
-        """Calculate technical indicators for stock price prediction"""
+        """Calculating technical indicators for stock price prediction"""
         # Make a copy of the dataframe
         df = df.copy()
 
@@ -61,21 +65,18 @@ class FeatureEngineer:
 
         return df
 
-    def create_target_variable(self, df, forecast_period=5):
-        """Create target variable for prediction"""
+    def create_target_variable(self, df, forecast_period=FUTURE_PERIOD):
+        """Creating target variable for prediction, forecast_period is the prediction period in days"""
         df["Target"] = df["Close"].shift(-forecast_period)
         df = df.dropna()
         return df
 
-    def prepare_features(self, df, forecast_period=5):
-        """Prepare features for model training"""
-        # Calculate technical indicators
+    def prepare_features(self, df, forecast_period=FUTURE_PERIOD):
+        """Prepare features for model training by using methods above"""
         df = self.calculate_technical_indicators(df)
-
-        # Create target variable
         df = self.create_target_variable(df, forecast_period)
 
-        # Select features for model training
+        # features for model training
         feature_columns = [
             "Close",
             "SMA_5",

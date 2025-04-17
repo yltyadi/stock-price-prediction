@@ -2,22 +2,22 @@ Performance Report for AAPL
 ==================================================
 
 MSE:
-  Linear Regression: 114.5423
-  Kernel Ridge: 99.6624
-  Improvement: -12.99%
+  Linear Regression: 114.3520
+  Kernel Ridge: 99.6336
+  Error Reduction: 12.87%
 
 RMSE:
-  Linear Regression: 10.7024
-  Kernel Ridge: 9.9831
-  Improvement: -6.72%
+  Linear Regression: 10.6936
+  Kernel Ridge: 9.9817
+  Error Reduction: 6.66%
 
 MAE:
-  Linear Regression: 8.3856
-  Kernel Ridge: 7.7988
-  Improvement: -7.00%
+  Linear Regression: 8.3674
+  Kernel Ridge: 7.8017
+  Error Reduction: 6.76%
 
 R2:
-  Linear Regression: 0.6552
-  Kernel Ridge: 0.7000
-  Improvement: 6.84%
+  Linear Regression: 0.6470
+  Kernel Ridge: 0.6924
+  Accuracy Improvement: 7.02%
 
